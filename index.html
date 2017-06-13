@@ -1,0 +1,352 @@
+t<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>白天不懂夜的黑</title>
+    <style>
+
+        *{padding: 0;margin: 0;}
+        body{
+            position: relative;
+            background: greenyellow;
+            height: 1000px;
+            overflow: hidden;
+
+        }
+        /*.cao{*/
+
+            /*background: greenyellow;*/
+        /*}*/
+        .sun{
+            position: absolute;
+            left:0;
+            top:0;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: radial-gradient(100px at center,red,orange,red,yellow);
+             transition: all 2s;
+        }
+        .yueliang{
+            position: absolute;
+            left:0;
+            z-index: 998;
+            width: 200px;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            opacity:0 ;
+            overflow: hidden;
+            transition: all 4s;
+            transform: rotate(30deg);
+            background-image: radial-gradient(65px at 0px 35px, rgba(162, 162, 162, 0.8),white);
+            box-shadow: -8px -0px 20px white;
+        }
+        .yueliang::after{
+            position: absolute;
+            left:40%;
+            width: 200px;
+            height: 200px;
+            content: "";
+            background: skyblue;
+            border-radius: 50%;
+            transition: all 4s;
+
+
+        }
+        body:hover  .yueliang::after{
+            background: #000;
+
+        }
+        body:hover .tou:after,  body:hover .tou:before{
+            height: 5px;
+            background: #000;
+        }
+        body:hover .yueliang{
+            opacity: 1;
+        }
+
+        body:hover .sun{
+            left:100%;
+            /*margin-left: -200px;*/
+        }
+        body:hover .sky{
+            background: #000;
+        }
+        body:hover .xian:after{
+            transform: rotate(-3545deg);
+        }
+        body:hover .xian:before{
+            transform: rotate(-3645deg);
+        }
+        .sky{
+            width: 100%;
+            height:300px;
+            background: skyblue;
+            position: absolute;
+            border-bottom-left-radius: 50px;
+            transition: all 4s;
+            margin-top:-100px;
+        }
+        .wai {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            margin-left: -250px;
+        }
+        .tou{
+            width: 180px;
+            height: 150px;
+            background: green;
+            margin: 0 auto;
+            border-top-left-radius: 130px;
+            border-top-right-radius:130px;
+            border-bottom-right-radius:100px;
+            border-bottom-left-radius:100px;
+
+            position: relative;
+
+        }
+        .tou::before{
+            content: "❤";
+            color:red;
+            font-size: 30px;
+            line-height: 30px;
+            position:absolute;
+            top: 80px;
+            left:40px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            transition: all 4s;
+            overflow: hidden;
+        }
+
+        .tou::after{
+            content: "❤";
+            color:red;
+            font-size: 30px;
+            line-height: 30px;
+            position:absolute;
+            top: 80px;
+            right:40px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            transition: all 4s;
+            overflow: hidden;
+        }
+        /*::before,::after{*/
+            /*transition: all 1s;*/
+        /*}*/
+        .wai:hover .tou::before{
+            font-size:60px;
+            text-shadow:0 0px 5px deeppink;
+        }
+        .wai:hover .tou::after{
+            font-size:60px;
+            text-shadow: 0 0px 3px yellow,0 0px 5px deeppink;
+        }
+
+        .shenti{
+            position: relative;
+            width: 200px;
+            height: 170px;
+            background: green;
+            /*margin-top: 10px;*/
+            margin: 10px auto 0;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 170px;
+            color:#fff;
+            font-size: 40px;
+            font-weight: 400;
+        }
+        body:hover{
+            font-size: 60px;
+            /*text-shadow: -2px -2px 10px #fff ;*/
+            text-shadow: 10px 30px 3px green,15px 35px 3px yellow,20px 40px 3px red,25px 45px 3px pink;
+        }
+        .shenti::before {
+            content: "";
+            position:absolute;
+            left:-50px ;
+            top: 0 ;
+            width: 40px;
+            height: 100px;
+            background: green;
+            border-radius: 40px;
+            transition: all 4s;
+
+        }
+        body:hover .shenti::after{
+            transform: rotate(0deg);
+            /*transition: all 4s;*/
+        }
+        .shenti::after {
+            content: "";
+            position: absolute;
+            right:-50px ;
+            top: 0 ;
+            width: 40px;
+            height: 100px;
+            background: green;
+            border-radius: 40px;
+            transition: all 1s;
+            transform: rotate(-120deg);
+        }
+        .footer{position: relative}
+        .footer::before{
+            content: "";
+            position:absolute;
+            top:-30px;
+            left:180px;
+            width:40px;
+            height: 100px;
+            background-color: green;
+            border-radius: 40px;
+            transition: all 1s;
+        }
+        .footer::after{
+            content: "";
+            position:absolute;
+            top:-30px;
+            right:180px;
+            width:40px;
+            height: 100px;
+            background-color: green;
+            border-radius: 40px;
+        }
+        .xian{position: relative}
+        .xian::before{
+            content: "";
+            position: absolute;
+            top:-58px;
+            left:150px;
+            width: 10px;
+            height: 100px;
+            background-color: green;
+            transform:rotate(-45deg);
+            transition: all 4s;
+        }
+        .xian::after{
+            content: "";
+            position: absolute;
+            top:-58px;
+            right:150px;
+            width: 10px;
+            height: 100px;
+            background-color: green;
+            transform:rotate(45deg);
+            transition: all 4s;
+        }
+           .box{
+               position: absolute;
+               top:139px;
+               left:65%;
+           }
+        .body1{
+            width: 120px;
+            height: 120px;
+            position: relative;
+            z-index: 900;
+            transition: all 5s;
+            margin:-5px auto;
+            /*transform: rotate(900deg);*/
+            transition: all 4s;
+        }
+        body:hover .body1{
+            transform: rotate(1800deg);
+        }
+        .yezi1,.yezi2,.yezi3,.yezi4{
+            margin: 90px auto;
+            width: 60px;
+            height:30px;
+            /*background: red;*/
+            position: relative;
+            transition: all 1s;
+            background-image: linear-gradient(to bottom,red,purple,green,greenyellow);
+        }
+        .yezi1{
+            top:60px;
+            left:30px;
+            transform: rotate(0deg);
+        }
+        .yezi2{
+            top:-45px;
+            left:-15px;
+            transform: rotate(90deg);
+        }
+        .yezi3{
+            top:-225px;
+            left:13px;
+            transform: rotate(-90deg);
+        }
+        .yezi4{
+            top:-329px;
+            left:-32px;
+            transform: rotate(-180deg);
+        }
+        .yezi1::after,.yezi2:after,.yezi3:after,.yezi4:after{
+            content: "";
+            width: 60px;
+            height:30px;
+            position: absolute;
+            top: 10px;
+            left:21px;
+            background: greenyellow;
+            transform:rotate(-216deg);
+
+        }
+        .yuan{
+            position: absolute;
+            left:50%;
+            top: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            width: 16px;
+            height:16px;
+            z-index: 200;
+            background-color: darkblue;
+            border-radius: 50%;
+        }
+      .xian2{
+        position: absolute;
+          top:95px;
+          right:40px;
+            width:10px;
+            height: 100px;
+            background-color: grey;
+            transform: rotate(45deg);
+          z-index: 300;
+      }
+    </style>
+</head>
+<body>
+
+<div class="sky"></div>
+<div class="sun"></div>
+<div class="yueliang"></div>
+<!--<div class="cao"></div>-->
+<div class="wai">
+    <div class="xian"></div>
+    <div class="tou"></div>
+    <div class="shenti">L❤VE</div>
+    <div class="xian2"></div>
+    <div class="footer"></div>
+</div>
+<div class="box">
+    <div class="body1">
+        <div class="yuan"></div>
+        <div class="yezi1"></div>
+        <div class="yezi2"></div>
+        <div class="yezi3"></div>
+        <div class="yezi4"></div>
+    </div>
+</div>
+</body>
+</html>
